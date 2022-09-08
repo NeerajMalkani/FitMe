@@ -6,9 +6,10 @@ import SplashScreen from "./src/screens/SplashScreen";
 
 export default function App() {
   return (
-    <SafeAreaView style={[Styles.flex1, { paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0 }]}>
+    <SafeAreaView style={[Styles.flex1, { backgroundColor: theme.colors.backgroundColor, paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0 }]}>
       <PaperProvider theme={theme}>
-          <SplashScreen/>
+        <StatusBar backgroundColor={theme.colors.primaryContainer} barStyle="dark-content" />
+        <SplashScreen />
       </PaperProvider>
     </SafeAreaView>
   );

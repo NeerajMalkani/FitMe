@@ -1072,6 +1072,11 @@
   resolved "https://registry.yarnpkg.com/@expo-google-fonts/lobster/-/lobster-0.2.2.tgz#8f3b5151f2e38031152d8fb242cad681f64d35ae"
   integrity sha512-1GYR9pxBUkPCejijESrqSYC0GYLz+kW7hZQDDJ0L7g3P+ghHmYidE9NVqdiUbB6fWJKIgkVIXqFz0ZXIagCkBA==
 
+"@expo-google-fonts/special-elite@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@expo-google-fonts/special-elite/-/special-elite-0.2.2.tgz#fd3b446f09c9040a7ed4cb80f3b4af4f0b3786ee"
+  integrity sha512-74Yt+alpmjbR2WPbp5yOxkAhiCqlHuJqH2QOyahct6ny5GNxJkg/1pKyhmK1zTXJRBVH3fMNWtcDSqP8dn/EUg==
+
 "@expo/bunyan@4.0.0", "@expo/bunyan@^4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@expo/bunyan/-/bunyan-4.0.0.tgz#be0c1de943c7987a9fbd309ea0b1acd605890c7b"
