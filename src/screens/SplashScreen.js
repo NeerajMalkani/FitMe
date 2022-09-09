@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Image, View } from "react-native";
 import AnimatedSplash from "react-native-animated-splash-screen";
 import { useFonts, SpecialElite_400Regular } from "@expo-google-fonts/special-elite";
+import { createNavigationContainerRef } from "@react-navigation/native";
 import * as Animatable from "react-native-animatable";
 import { createAnimatableComponent } from "react-native-animatable";
 import { theme } from "../theme/apptheme";
@@ -9,8 +10,8 @@ import { Styles } from "../styles/styles";
 import TourScreen from "./TourScreen";
 
 const AnimatableView = createAnimatableComponent(View);
-
-const SplashScreen = () => {
+export const navigationRef = createNavigationContainerRef();
+const SplashScreen = ({ navigation }) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   let [fontsLoaded] = useFonts({
@@ -39,28 +40,30 @@ const SplashScreen = () => {
   }
 
   return (
-    <AnimatedSplash
-      translucent={true}
-      isLoaded={isLoaded}
-      customComponent={
-        <View style={[Styles.flexRow, Styles.flexJustifyCenter, Styles.flexAlignCenter, Styles.width100per]}>
-          <View style={[Styles.flexRow, Styles.height96, Styles.flexAlignCenter]}>
-            {CreateAnimatedAlphabet("F", 200)}
-            {CreateAnimatedAlphabet("I", 400)}
-            {CreateAnimatedAlphabet("T", 600)}
-            {CreateAnimatedAlphabet(" ", 600)}
-            {CreateAnimatedAlphabet("M", 800)}
-            {CreateAnimatedAlphabet("E", 1000)}
+    <View style={[Styles.flex1]}>
+      <AnimatedSplash
+        translucent={true}
+        isLoaded={isLoaded}
+        customComponent={
+          <View style={[Styles.flexRow, Styles.flexJustifyCenter, Styles.flexAlignCenter, Styles.width100per]}>
+            <View style={[Styles.flexRow, Styles.height96, Styles.flexAlignCenter]}>
+              {CreateAnimatedAlphabet("F", 200)}
+              {CreateAnimatedAlphabet("I", 400)}
+              {CreateAnimatedAlphabet("T", 600)}
+              {CreateAnimatedAlphabet(" ", 600)}
+              {CreateAnimatedAlphabet("M", 800)}
+              {CreateAnimatedAlphabet("E", 1000)}
+            </View>
+            <AnimatableView animation="bounceInLeft" duration={2400} delay={500} style={[Styles.width96, Styles.height96]}>
+              <Image source={require("../../assets/logo.png")} style={[Styles.width96, Styles.height96]} />
+            </AnimatableView>
           </View>
-          <AnimatableView animation="bounceInLeft" duration={2400} delay={500} style={[Styles.width96, Styles.height96]}>
-            <Image source={require("../../assets/logo.png")} style={[Styles.width96, Styles.height96]} />
-          </AnimatableView>
-        </View>
-      }
-      backgroundColor={theme.colors.background}
-    >
-      <TourScreen />
-    </AnimatedSplash>
+        }
+        backgroundColor={theme.colors.background}
+      >
+        <TourScreen navigation={navigation} />
+      </AnimatedSplash>
+    </View>
   );
 };
 

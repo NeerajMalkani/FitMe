@@ -4,7 +4,7 @@ import { IconButton } from "react-native-paper";
 import { Styles } from "../styles/styles";
 import { theme } from "../theme/apptheme";
 
-const TourScreen = () => {
+const TourScreen = ({ navigation }) => {
   const slides = [
     {
       backgroundColor: theme.colors.background,
@@ -36,11 +36,11 @@ const TourScreen = () => {
     return <View style={{ width: selected ? 16 : 6, height: 6, marginHorizontal: 4, backgroundColor: selected ? theme.colors.primary : theme.colors.secondaryContainer }} />;
   };
 
-  const Done = () => <IconButton icon="check" iconColor={theme.colors.primary} size={28} onPress={() => console.log("Pressed")} />;
+  const Done = () => <IconButton icon="check" iconColor={theme.colors.primary} size={28} onPress={() => navigation.navigate("Login")} />;
 
   return (
     <View style={[Styles.flex1]}>
-      <Onboarding pages={slides} DotComponent={Dots} DoneButtonComponent={Done} containerStyles={{ paddingHorizontal: 12 }} titleStyles={{ fontSize: 40 }} bottomBarHighlight={false} subTitleStyles={{ fontSize: 16, color: theme.colors.onSurfaceDisabled }} />
+      <Onboarding pages={slides} DotComponent={Dots} DoneButtonComponent={Done} containerStyles={{ paddingHorizontal: 12 }} titleStyles={{ fontSize: 40 }} bottomBarHighlight={false} subTitleStyles={{ fontSize: 16, color: theme.colors.onSurfaceDisabled }} onSkip={() => navigation.navigate("Login")} />
     </View>
   );
 };
