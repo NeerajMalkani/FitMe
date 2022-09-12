@@ -1,17 +1,19 @@
 import { useEffect, useState } from "react";
-import { Image, View } from "react-native";
+import { withTheme } from 'react-native-paper';
+import { Image, StatusBar, View } from "react-native";
 import AnimatedSplash from "react-native-animated-splash-screen";
 import { useFonts, SpecialElite_400Regular } from "@expo-google-fonts/special-elite";
 import { createNavigationContainerRef } from "@react-navigation/native";
 import * as Animatable from "react-native-animatable";
 import { createAnimatableComponent } from "react-native-animatable";
-import { theme } from "../theme/apptheme";
 import { Styles } from "../styles/styles";
 import TourScreen from "./TourScreen";
 
 const AnimatableView = createAnimatableComponent(View);
 export const navigationRef = createNavigationContainerRef();
-const SplashScreen = ({ navigation }) => {
+const SplashScreen = ({ route, navigation, theme }) => {
+  const { colors } = theme;
+
   const [isLoaded, setIsLoaded] = useState(false);
 
   let [fontsLoaded] = useFonts({
@@ -29,7 +31,7 @@ const SplashScreen = ({ navigation }) => {
 
   const CreateAnimatedAlphabet = (letter, delay) => {
     return (
-      <Animatable.Text animation={fadeIn} delay={delay} style={{ color: theme.colors.primary, fontSize: 56, fontWeight: "400", fontFamily: "SpecialElite_400Regular" }}>
+      <Animatable.Text animation={fadeIn} delay={delay} style={{ color: colors.primary, fontSize: 56, fontWeight: "400", fontFamily: "SpecialElite_400Regular" }}>
         {letter}
       </Animatable.Text>
     );
@@ -41,6 +43,7 @@ const SplashScreen = ({ navigation }) => {
 
   return (
     <View style={[Styles.flex1]}>
+      <StatusBar backgroundColor={colors.background} barStyle={route.params.themeMode ? "dark-content" : "light-content"} />
       <AnimatedSplash
         translucent={true}
         isLoaded={isLoaded}
@@ -59,12 +62,12 @@ const SplashScreen = ({ navigation }) => {
             </AnimatableView>
           </View>
         }
-        backgroundColor={theme.colors.background}
+        backgroundColor={colors.background}
       >
-        <TourScreen navigation={navigation} />
+        <TourScreen navigation={navigation} theme={theme} />
       </AnimatedSplash>
     </View>
   );
 };
 
-export default SplashScreen;
+export default withTheme(SplashScreen);

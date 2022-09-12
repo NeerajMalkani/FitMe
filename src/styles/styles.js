@@ -1,12 +1,10 @@
 import { StyleSheet } from "react-native";
-import { theme } from "../theme/apptheme";
 
 export const Styles = StyleSheet.create({
   /* #region Templates */
   container: {
     flex: 1,
-    padding: 16,
-    backgroundColor: theme.colors.background
+    padding: 16
   },
   /* #endregion */
   
@@ -16,15 +14,12 @@ export const Styles = StyleSheet.create({
   },
   border1: {
     borderWidth: 1,
-    borderColor: theme.colors.border,
   },
   border2: {
     borderWidth: 2,
-    borderColor: theme.colors.border,
   },
   border4: {
     borderWidth: 4,
-    borderColor: theme.colors.border,
   },
 
   borderBottom0: {
@@ -32,15 +27,12 @@ export const Styles = StyleSheet.create({
   },
   borderBottom1: {
     borderBottomWidth: 1,
-    borderBottomColor: theme.colors.border,
   },
   borderBottom2: {
     borderBottomWidth: 2,
-    borderBottomColor: theme.colors.border,
   },
   borderBottom4: {
     borderBottomWidth: 4,
-    borderBottomColor: theme.colors.border,
   },
 
   borderTop0: {
@@ -48,15 +40,12 @@ export const Styles = StyleSheet.create({
   },
   borderTop1: {
     borderTopWidth: 1,
-    borderTopColor: theme.colors.border,
   },
   borderTop2: {
     borderTopWidth: 2,
-    borderTopColor: theme.colors.border,
   },
   borderTop4: {
     borderTopWidth: 4,
-    borderTopColor: theme.colors.border,
   },
 
   borderLeft0: {
@@ -64,15 +53,12 @@ export const Styles = StyleSheet.create({
   },
   borderLeft1: {
     borderLeftWidth: 1,
-    borderLeftColor: theme.colors.border,
   },
   borderLeft2: {
     borderLeftWidth: 2,
-    borderLeftColor: theme.colors.border,
   },
   borderLeft4: {
     borderLeftWidth: 4,
-    borderLeftColor: theme.colors.border,
   },
 
   borderRight0: {
@@ -80,15 +66,12 @@ export const Styles = StyleSheet.create({
   },
   borderRight1: {
     borderRightWidth: 1,
-    borderLeftColor: theme.colors.border,
   },
   borderRight2: {
     borderRightWidth: 2,
-    borderRightColor: theme.colors.border,
   },
   borderRight4: {
     borderRightWidth: 4,
-    borderRightColor: theme.colors.border,
   },
 
   borderRadius0: {
