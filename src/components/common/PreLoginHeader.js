@@ -3,10 +3,10 @@ import { Styles } from "../../styles/styles";
 import { Text } from "react-native-paper";
 
 const PreLoginHeader = ({ theme, text }) => {
-  const { colors } = theme;
+  const { colors, multicolors } = theme;
   return (
-    <LinearGradient colors={[colors.primary, colors.primaryDark]} style={[Styles.width100per, Styles.flexJustifyEnd, Styles.paddingBottom16, Styles.paddingStart16, { height: 180, borderBottomRightRadius: 48 }]}>
-      <Text variant="headlineLarge" style={[{ color: colors.onPrimary, paddingEnd: 120 }]}>
+    <LinearGradient colors={[colors.primary, colors.primaryDark]} style={[Styles.width100per, Styles.flexJustifyEnd, Styles.paddingBottom32, Styles.paddingStart24, { height: 180, borderBottomRightRadius: 48 }]}>
+      <Text variant="headlineLarge" style={[{ color: multicolors.white, paddingEnd: 120 }]}>
         {text}
       </Text>
     </LinearGradient>
