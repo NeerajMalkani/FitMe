@@ -33,42 +33,45 @@ const LoginScreen = ({ route, navigation, theme }) => {
     setPassword(text);
   };
 
+  const PasswordMaskIcon = () => {
+    return <TextInput.Icon icon={secureTextEntry ? "eye" : "eye-off"} color={colors.onBackground} size={24} onPress={() => setSecureTextEntry(!secureTextEntry)} />;
+  };
+
+  const ForgotPassword = () => {
+
+  };
+
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
       <View style={[Styles.flex1, { backgroundColor: colors.background }]}>
         <StatusBar backgroundColor={colors.background} barStyle={route.params.themeMode ? "dark-content" : "light-content"} />
         <PreLoginHeader theme={theme} text="Login to FitMe" />
-        <KeyboardAwareScrollView resetScrollToCoords={{ x: 0, y: 0 }}>
-          <View style={[Styles.flex1, Styles.flexColumn, { justifyContent: "space-between" }]}>
+        <KeyboardAwareScrollView resetScrollToCoords={{ x: 0, y: 0 }} keyboardShouldPersistTaps="handled">
+          <View style={[Styles.flex1, Styles.marginTop32]}>
             <View style={[Styles.flex1, Styles.padding16, Styles.width100per]}>
-              <CustomTextBox props={{ tbRef: userIDRef, tbValue: userID, tbLabel: "Mobile No. / Email Id.", tbOnChange: onUserIDChanged, tbNextRef: passwordRef, tbError: userIDError, tbReturnKey: "next", tbKeyboardType: "name-phone-pad" }} />
-              <CustomTextBox
-                props={{
-                  tbRef: passwordRef,
-                  tbSecureText: secureTextEntry,
-                  tbValue: password,
-                  tbLabel: "Password",
-                  tbOnChange: onPasswordChanged,
-                  tbSecureText: true,
-                  tbError: passwordError,
-                  tbReturnKey: "done",
-                  tbStyle: { marginTop: 32 },
-                  tbRight: <TextInput.Icon name="eye" color={colors.onBackground} size={24} onPress={() => setSecureTextEntry(!secureTextEntry)} />,
-                }}
-              />
+              <CustomTextBox props={{ tbRef: userIDRef, tbValue: userID, tbLabel: "Mobile No. / Email Id", tbOnChange: onUserIDChanged, tbNextRef: passwordRef, tbError: userIDError, tbReturnKey: "next", tbKeyboardType: "name-phone-pad" }} />
+              <CustomTextBox props={{ tbRef: passwordRef, tbSecureText: secureTextEntry, tbValue: password, tbLabel: "Password", tbOnChange: onPasswordChanged, tbError: passwordError, tbReturnKey: "done", tbStyle: { marginTop: 32 }, tbRight: PasswordMaskIcon() }} />
+              <Button mode="text" style={[Styles.marginTop12, Styles.flexAlignEnd]} textColor={colors.text} onPress={ForgotPassword}>
+                Forgot Password?
+              </Button>
               <Button mode="contained" style={[Styles.marginTop32]} onPress={() => console.log("Pressed")}>
                 LOG IN
               </Button>
-              <Button mode="text" style={[Styles.marginTop32, Styles.flexAlignEnd]} textColor={colors.onBackground} onPress={() => console.log("Pressed")}>
-                Forgot Password?
-              </Button>
               <View style={[Styles.flex1, Styles.padding16, Styles.width100per, Styles.flexAlignCenter, Styles.marginTop32]}>
-                <Text variant="labelLarge" style={{ color: colors.onBackground }}>
+                <Text variant="bodyMedium" style={{ color: colors.textTertiary }}>
                   Connect with your social account
                 </Text>
                 <View style={[Styles.flexRow, Styles.marginTop16]}>
                   <SocialIcons icon="facebook" themeMode={route.params.themeMode} iconClick={() => {}} />
                   <SocialIcons icon="google" containerStyle={{ marginLeft: 16 }} themeMode={route.params.themeMode} iconClick={() => {}} />
+                </View>
+                <View style={[Styles.flexRow, Styles.marginTop32, Styles.flexAlignCenter]}>
+                  <Text variant="bodyLarge" style={{ color: colors.textSecondary }}>
+                    Don't have an account?
+                  </Text>
+                  <Button mode="text" style={[Styles.marginStart4]} onPress={() => console.log("Pressed")}>
+                    SIGN UP
+                  </Button>
                 </View>
               </View>
             </View>

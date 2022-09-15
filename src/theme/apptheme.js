@@ -7,8 +7,11 @@ export const darkTheme = {
   roundness: 2,
   colors: {
     ...DarkTheme.colors,
-    primary: "#673ab7",
-    primaryDark: "#311b92",
+    primary: "#3f51b5",
+    primaryDark: "#1a237e",
+    text: "rgba(255,255,255,0.87)",
+    textSecondary: "rgba(255,255,255,0.54)",
+    textTertiary: "rgba(255,255,255,0.32)",
   },
   multicolors: {
     red: "#C41E3A",
@@ -26,8 +29,11 @@ export const lightTheme = {
   roundness: 2,
   colors: {
     ...LightTheme.colors,
-    primary: "#673ab7",
-    primaryDark: "#311b92",
+    primary: "#3f51b5",//"#e53935",//"#673ab7",
+    primaryDark: "#1a237e",//"#b71c1c"//"#311b92",
+    text: "rgba(0,0,0,0.87)",
+    textSecondary: "rgba(0,0,0,0.54)",
+    textTertiary: "rgba(0,0,0,0.32)",
   },
   multicolors: {
     red: "#C41E3A",
