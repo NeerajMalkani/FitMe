@@ -37,8 +37,24 @@ const LoginScreen = ({ route, navigation, theme }) => {
     return <TextInput.Icon icon={secureTextEntry ? "eye" : "eye-off"} color={colors.onBackground} size={24} onPress={() => setSecureTextEntry(!secureTextEntry)} />;
   };
 
+  const ValidateLogin = () => {
+      
+  };
+
   const ForgotPassword = () => {
 
+  };
+
+  const GoogleLogin = () => {
+
+  };
+
+  const FacebookLogin = () => {
+
+  };
+
+  const SignUp = () => {
+    navigation.navigate("SignupScreen");
   };
 
   return (
@@ -54,7 +70,7 @@ const LoginScreen = ({ route, navigation, theme }) => {
               <Button mode="text" style={[Styles.marginTop12, Styles.flexAlignEnd]} textColor={colors.text} onPress={ForgotPassword}>
                 Forgot Password?
               </Button>
-              <Button mode="contained" style={[Styles.marginTop32]} onPress={() => console.log("Pressed")}>
+              <Button mode="contained" style={[Styles.marginTop32]} onPress={ValidateLogin}>
                 LOG IN
               </Button>
               <View style={[Styles.flex1, Styles.padding16, Styles.width100per, Styles.flexAlignCenter, Styles.marginTop32]}>
@@ -62,14 +78,14 @@ const LoginScreen = ({ route, navigation, theme }) => {
                   Connect with your social account
                 </Text>
                 <View style={[Styles.flexRow, Styles.marginTop16]}>
-                  <SocialIcons icon="facebook" themeMode={route.params.themeMode} iconClick={() => {}} />
-                  <SocialIcons icon="google" containerStyle={{ marginLeft: 16 }} themeMode={route.params.themeMode} iconClick={() => {}} />
+                  <SocialIcons icon="facebook" themeMode={route.params.themeMode} iconClick={FacebookLogin} />
+                  <SocialIcons icon="google" containerStyle={{ marginLeft: 16 }} themeMode={route.params.themeMode} iconClick={GoogleLogin} />
                 </View>
                 <View style={[Styles.flexRow, Styles.marginTop32, Styles.flexAlignCenter]}>
                   <Text variant="bodyLarge" style={{ color: colors.textSecondary }}>
                     Don't have an account?
                   </Text>
-                  <Button mode="text" style={[Styles.marginStart4]} onPress={() => console.log("Pressed")}>
+                  <Button mode="text" style={[Styles.marginStart4]} onPress={SignUp}>
                     SIGN UP
                   </Button>
                 </View>
