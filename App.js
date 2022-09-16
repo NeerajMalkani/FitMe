@@ -8,6 +8,8 @@ import SplashScreen, { navigationRef } from "./src/screens/SplashScreen";
 import LoginScreen from "./src/screens/LoginScreen";
 import { useState } from "react";
 import SignupScreen from "./src/screens/SignupScreen";
+import ForgotPasswordScreen from "./src/screens/ForgotPasswordScreen";
+import GeneralInformationScreen from "./src/screens/GeneralInformationScreen";
 
 const Stack = createStackNavigator();
 export default function App() {
@@ -20,6 +22,8 @@ export default function App() {
             <Stack.Screen name="Splash" component={SplashScreen} options={{ headerShown: false }} initialParams={{ themeMode: themeMode }}/>
             <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} initialParams={{ themeMode: themeMode }}/>
             <Stack.Screen name="Signup" component={SignupScreen} options={{ headerShown: false }} initialParams={{ themeMode: themeMode }}/>
+            <Stack.Screen name="ForgotPassword" component={ForgotPasswordScreen} options={{ headerShown: false }} initialParams={{ themeMode: themeMode }}/>
+            <Stack.Screen name="GeneralInformation" component={GeneralInformationScreen} options={{ headerShown: false }} initialParams={{ themeMode: themeMode }}/>
           </Stack.Navigator>
         </NavigationContainer>
       </PaperProvider>

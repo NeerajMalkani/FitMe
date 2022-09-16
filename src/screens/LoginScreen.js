@@ -17,10 +17,12 @@ const LoginScreen = ({ route, navigation, theme }) => {
   const [passwordError, setPasswordError] = useState(false);
   const [secureTextEntry, setSecureTextEntry] = useState(true);
   const passwordRef = useRef();
-
+  let isBack = true;
   useEffect(() => {
     const unsubscribe = navigation.addListener("blur", () => {
-      BackHandler.exitApp();
+      if (isBack) {
+        BackHandler.exitApp();
+      }
     });
     return unsubscribe;
   }, [navigation]);
@@ -38,23 +40,19 @@ const LoginScreen = ({ route, navigation, theme }) => {
   };
 
   const ValidateLogin = () => {
-      
+    isBack = false;
+    navigation.navigate("GeneralInformation");
   };
 
-  const ForgotPassword = () => {
+  const ForgotPassword = () => {};
 
-  };
+  const GoogleLogin = () => {};
 
-  const GoogleLogin = () => {
-
-  };
-
-  const FacebookLogin = () => {
-
-  };
+  const FacebookLogin = () => {};
 
   const SignUp = () => {
-    navigation.navigate("SignupScreen");
+    isBack = false;
+    navigation.navigate("Signup");
   };
 
   return (

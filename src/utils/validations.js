@@ -9,10 +9,12 @@ export const ValidateMobile = (mobile) => {
 };
 
 export const ValidatePassword = (password) => {
-    
+    const reg = /((?=.*[a-z])(?=.*[0-9])(?=.{6,}))/;
     return reg.test(password);
 };
 
-export const MatchPasswords = (password, confirmPassword) => {};
+export const MatchPasswords = (password, confirmPassword) => {
+  return password === confirmPassword;
+};
 
 export const ValidateFullName = (fullname) => {};
