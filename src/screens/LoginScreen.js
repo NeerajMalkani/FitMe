@@ -76,8 +76,8 @@ const LoginScreen = ({ route, navigation, theme }) => {
                   Connect with your social account
                 </Text>
                 <View style={[Styles.flexRow, Styles.marginTop16]}>
-                  <SocialIcons icon="facebook" themeMode={route.params.themeMode} iconClick={FacebookLogin} />
-                  <SocialIcons icon="google" containerStyle={{ marginLeft: 16 }} themeMode={route.params.themeMode} iconClick={GoogleLogin} />
+                  <SocialIcons icon="facebook" iconClick={FacebookLogin} />
+                  <SocialIcons icon="google" containerStyle={{ marginLeft: 16 }} iconClick={GoogleLogin} />
                 </View>
                 <View style={[Styles.flexRow, Styles.marginTop32, Styles.flexAlignCenter]}>
                   <Text variant="bodyLarge" style={{ color: colors.textSecondary }}>

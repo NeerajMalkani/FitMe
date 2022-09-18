@@ -12,6 +12,9 @@ export const darkTheme = {
     text: "rgba(255,255,255,0.87)",
     textSecondary: "rgba(255,255,255,0.54)",
     textTertiary: "rgba(255,255,255,0.32)",
+    inverseText: "rgba(0,0,0,0.87)",
+    inverseTextSecondary: "rgba(0,0,0,0.54)",
+    inverseTextTertiary: "rgba(0,0,0,0.32)",
   },
   multicolors: {
     red: "#C41E3A",
@@ -34,6 +37,9 @@ export const lightTheme = {
     text: "rgba(0,0,0,0.87)",
     textSecondary: "rgba(0,0,0,0.54)",
     textTertiary: "rgba(0,0,0,0.32)",
+    inverseText: "rgba(255,255,255,0.87)",
+    inverseTextSecondary: "rgba(255,255,255,0.54)",
+    inverseTextTertiary: "rgba(255,255,255,0.32)",
   },
   multicolors: {
     red: "#C41E3A",
