@@ -1,5 +1,6 @@
-import { useRef } from "react";
-import { StatusBar, TouchableWithoutFeedback, View } from "react-native";
+import { useRef, useState } from "react";
+import { Keyboard, StatusBar, TouchableWithoutFeedback, View } from "react-native";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { Button, Text, TextInput, withTheme } from "react-native-paper";
 import PreLoginHeader from "../components/common/PreLoginHeader";
 import SocialIcons from "../components/uielements/SocialIcons";
@@ -11,6 +12,8 @@ const SignupScreen = ({ route, navigation, theme }) => {
   const userFullNameRef = useRef();
   const mobileRef = useRef();
   const emailRef = useRef();
+  const passwordRef = useRef();
+  const confirmPasswordRef = useRef();
 
   const [fullName, setFullName] = useState("");
   const [fullNameHelperText, setFullNameHelperText] = useState("");
